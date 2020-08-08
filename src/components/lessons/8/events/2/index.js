@@ -5,9 +5,9 @@ class WindowSize extends React.Component {
   constructor(props) {
     super(props);
     this.state = {height: '', width: ''};
-    { /* change code below this line */ }
+    /* change code below this line */
 
-    { /* change code above this line */ }
+    /* change code above this line */
   }
 
   componentDidMount() {
@@ -19,7 +19,6 @@ class WindowSize extends React.Component {
 
   componentWillUnmount() {
     /* change code below this line */
-
     /* change code above this line */
   }
 
@@ -30,7 +29,7 @@ class WindowSize extends React.Component {
   }
 
   storeWindowSize({ height, width }) {
-    this.setState({height, width});
+    this.setState({ height, width });
   }
 
   onResize() {
@@ -39,19 +38,23 @@ class WindowSize extends React.Component {
 
   render() {
     const { height, width } = this.state;
-    return <div>
-      <h2>Window size</h2>
-      <div>Window height: {height} px, window width: {width} px</div>
-      <br/>
-      <textarea/>
-    </div>
+    return (
+      <div>
+        <h2>Window size</h2>
+        <div>
+          Window height: {height} px, window width: {width} px
+        </div>
+        <br />
+        <textarea />
+      </div>
+    );
   }
 }
 
 const Task = () => {
   return (
-    <div className="task" >
-      <WindowSize/>
+    <div className="task">
+      <WindowSize />
     </div>
   );
 };

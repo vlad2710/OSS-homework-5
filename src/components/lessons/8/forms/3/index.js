@@ -16,7 +16,7 @@ class UncontrolledForm extends React.Component {
     const agreeCheckbox = agreeRef.current.checked;
 
     if (!email) {
-      alert(`entry valid email first, please`);
+      alert(`enter valid email first, please`);
     }
 
     if (agreeCheckbox) {

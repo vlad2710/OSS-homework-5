@@ -31,7 +31,6 @@ class VoteComponent extends React.PureComponent {
   }
 
   render() {
-    console.log('VoteComponent render');
     const { resolution, terminalNumber } = this.props;
     return (
       <div style={this.style} >

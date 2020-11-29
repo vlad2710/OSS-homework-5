@@ -4,6 +4,7 @@ const friends = ['Mikenzi', 'Cash', 'Steven', 'Kimmy', 'Doug'];
 
 const List = () => {
   // Render a list using the "friends" being passed in.
+  // prettier-ignore
   return (
     <ul>
 

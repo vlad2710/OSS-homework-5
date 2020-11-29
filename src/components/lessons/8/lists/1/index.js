@@ -10,6 +10,7 @@ const friends = [
 
 const List = () => {
   // Render a list using the "friends" being passed in.
+  // prettier-ignore
   return (
     <ul>
 

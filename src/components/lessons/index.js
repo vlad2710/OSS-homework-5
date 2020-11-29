@@ -1,5 +1,5 @@
-import lessons8Tasks  from './8';
-import lessons9Tasks  from './9';
+import lessons8Tasks from './8';
+import lessons9Tasks from './9';
 
 //map  topics tasks to lessons names
 export default {

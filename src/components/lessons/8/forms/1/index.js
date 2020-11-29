@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
 function sendEmail(name, mail, message) {
-  const params = {name, mail, message};
+  const params = { name, mail, message };
   let alertText = 'Email sending request in process.\nEmail params:\n';
-  alertText += Object.keys(params).map(i => `${i}: ${params[i]}`).join('\n');
+  alertText += Object.keys(params)
+    .map((i) => `${i}: ${params[i]}`)
+    .join('\n');
   alert(alertText);
 }
 
@@ -20,7 +22,6 @@ class UncontrolledForm extends Component {
 
   handleSubmit = () => {
     // change code below this line
-
     //sendEmail(name, mail, message);
     // change code above this line
   };
@@ -39,7 +40,7 @@ class UncontrolledForm extends Component {
 const Task = () => {
   return (
     <div>
-      <UncontrolledForm/>
+      <UncontrolledForm />
     </div>
   );
 };

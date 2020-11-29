@@ -1,12 +1,9 @@
 import React from 'react';
 
 function ListItem({ data: { name, age } }) {
-  return (
-    <li>
-      {`${name}, ${age} years old`}
-    </li>
-  );
+  return <li>{`${name}, ${age} years old`}</li>;
 }
+
 function FriendsList({ friends }) {
   const listItems = friends.map((friend) => <ListItem data={friend} />);
   return (
@@ -16,12 +13,13 @@ function FriendsList({ friends }) {
     </div>
   );
 }
+
 const friends = [
-  {name: 'Peter', age: 25},
-  {name: 'Sachin', age: 33},
-  {name: 'Kevin', age: 37},
-  {name: 'Dhoni', age: 48},
-  {name: 'Alisa', age: 29},
+  { name: 'Peter', age: 25 },
+  { name: 'Sachin', age: 33 },
+  { name: 'Kevin', age: 37 },
+  { name: 'Dhoni', age: 48 },
+  { name: 'Alisa', age: 29 },
 ];
 
 const Task = () => {

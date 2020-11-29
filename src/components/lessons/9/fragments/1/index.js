@@ -13,11 +13,13 @@ const chance = Chance();
 const generateData = (count) => {
   const ids = chance.unique(chance.integer, count, {
     min: MIN_ID,
-    max: MAX_ID
+    max: MAX_ID,
   });
-  return ids.map(id => (
-    { id: id, title: faker.lorem.sentence(), body: faker.lorem.paragraphs(2) }
-  ));
+  return ids.map((id) => ({
+    id: id,
+    title: faker.lorem.sentence(),
+    body: faker.lorem.paragraphs(2),
+  }));
 };
 
 const data = generateData(MIN_COUNT);
@@ -34,7 +36,7 @@ const Articles = ({ data }) => {
       ))}
     </div>
   );*/
-}
+};
 
 const Task = () => {
   return (

@@ -6,7 +6,6 @@ import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
 
 import { SearchableList as List } from './components';
 
-
 const MIN_ID = 0;
 const MAX_ID = 400;
 
@@ -26,12 +25,12 @@ const Label = styled.span`
   color: #aaaaaa;
 `;
 
-const refreshData = count => {
+const refreshData = (count) => {
   const ids = chance.unique(chance.integer, count, {
     min: MIN_ID,
-    max: MAX_ID
+    max: MAX_ID,
   });
-  const data = ids.map(id => {
+  const data = ids.map((id) => {
     return { id: id, name: faker.company.companyName() };
   });
   return data;
@@ -49,14 +48,14 @@ function Task() {
   return (
     <div className="task">
       <Header>
-        {!match && <Link to={listPath} >list</Link>}
+        {!match && <Link to={listPath}>list</Link>}
         <Switch>
-          <Route path={listPath} exact >
-            <Link to={url} >back to task page</Link>
+          <Route path={listPath} exact>
+            <Link to={url}>back to task page</Link>
             <List list={list} />
           </Route>
         </Switch>
-        <br/>
+        <br />
         <Label>{list.length} items</Label>
       </Header>
     </div>

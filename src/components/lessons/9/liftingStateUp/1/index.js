@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class VoteComponent extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -14,7 +13,7 @@ class VoteComponent extends React.PureComponent {
     padding: '8px',
     marginTop: '16px',
     border: 'solid 1px grey',
-  }
+  };
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (this.state.votesNumber !== prevState.votesNumber) {
@@ -23,17 +22,17 @@ class VoteComponent extends React.PureComponent {
   }
 
   increase = () => {
-    this.setState(({ votesNumber }) => ({votesNumber: votesNumber + 1}));
-  }
+    this.setState(({ votesNumber }) => ({ votesNumber: votesNumber + 1 }));
+  };
 
   decrease = () => {
-    this.setState(({ votesNumber }) => ({votesNumber: votesNumber - 1}));
-  }
+    this.setState(({ votesNumber }) => ({ votesNumber: votesNumber - 1 }));
+  };
 
   render() {
     const { resolution, terminalNumber } = this.props;
     return (
-      <div style={this.style} >
+      <div style={this.style}>
         <h6>Terminal number: {terminalNumber}</h6>
         <h3>Resolution: "{resolution}"</h3>
         <button onClick={this.decrease}>No</button>
@@ -50,7 +49,7 @@ const VotingDisplay = ({ resolution, result }) => {
       <h2>Result: {result}</h2>
     </React.Fragment>
   );
-}
+};
 
 class VotingSystem extends React.Component {
   constructor(props) {
@@ -62,8 +61,8 @@ class VotingSystem extends React.Component {
   }
 
   onVote = (votesNumber) => {
-    this.setState({votesNumber});
-  }
+    this.setState({ votesNumber });
+  };
 
   render() {
     const { resolution } = this.props;
@@ -71,9 +70,21 @@ class VotingSystem extends React.Component {
     return (
       <React.Fragment>
         <VotingDisplay resolution={resolution} result={votesNumber} />
-        <VoteComponent resolution={resolution} onVote={this.onVote} terminalNumber={1} />
-        <VoteComponent resolution={resolution} onVote={this.onVote} terminalNumber={2} />
-        <VoteComponent resolution={resolution} onVote={this.onVote} terminalNumber={3} />
+        <VoteComponent
+          resolution={resolution}
+          onVote={this.onVote}
+          terminalNumber={1}
+        />
+        <VoteComponent
+          resolution={resolution}
+          onVote={this.onVote}
+          terminalNumber={2}
+        />
+        <VoteComponent
+          resolution={resolution}
+          onVote={this.onVote}
+          terminalNumber={3}
+        />
       </React.Fragment>
     );
   }

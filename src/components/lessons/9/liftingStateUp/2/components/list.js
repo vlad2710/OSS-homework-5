@@ -37,19 +37,20 @@ const ArchivedLabel = styled(Label)`
   font-size: 12px;
 `;
 
-const byArchived = archivedItems => item => !archivedItems.includes(item.id);
+const byArchived = (archivedItems) => (item) =>
+  !archivedItems.includes(item.id);
 
 const List = ({ className, list }) => {
   const [archivedItems, setArchivedItems] = React.useState([]);
 
-  const handleArchive = id => {
-    setArchivedItems(archivedItems => [...archivedItems, id]);
+  const handleArchive = (id) => {
+    setArchivedItems((archivedItems) => [...archivedItems, id]);
   };
 
   return (
     <React.Fragment>
       <Container className={className}>
-        {list.filter(byArchived(archivedItems)).map(item => (
+        {list.filter(byArchived(archivedItems)).map((item) => (
           <Row key={item.id}>
             <Label>{item.name}</Label>
             <Button type="button" onClick={() => handleArchive(item.id)}>
@@ -59,7 +60,7 @@ const List = ({ className, list }) => {
         ))}
       </Container>
       <ArchivedLabel>
-        {archivedItems.length} item{archivedItems.length === 1 ? "" : "s"}{" "}
+        {archivedItems.length} item{archivedItems.length === 1 ? '' : 's'}{' '}
         archived...
       </ArchivedLabel>
       {archivedItems.length > 0 && (

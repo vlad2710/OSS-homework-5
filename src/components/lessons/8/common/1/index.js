@@ -17,7 +17,8 @@ const list = [
   },
 ];
 
-const isSearched = searchTerm => item => item.title.toLowerCase().includes(searchTerm.toLowerCase());
+const isSearched = (searchTerm) => (item) =>
+  item.title.toLowerCase().includes(searchTerm.toLowerCase());
 
 class Search extends React.Component {
   constructor(props) {
@@ -30,13 +31,13 @@ class Search extends React.Component {
   }
 
   onSearchChange(event) {
-    const value = '';// your code is here
+    const value = ''; // your code is here
     this.setState({ searchTerm: value });
   }
 
   onDismiss(e) {
-    const itemId = '';// your code is here
-    const updatedList = this.state.list.filter(item => item.id !== itemId);
+    const itemId = ''; // your code is here
+    const updatedList = this.state.list.filter((item) => item.id !== itemId);
     this.setState({ list: updatedList });
   }
 
@@ -44,30 +45,24 @@ class Search extends React.Component {
     return (
       <div className="search">
         <form>
-          <input
-            type="text"
-            onChange={this.onSearchChange}
-          />
+          <input type="text" onChange={this.onSearchChange} />
         </form>
-        <ul className="items-list" >
-          {this.state.list.filter(isSearched(this.state.searchTerm)).map(item => {
-            const { id, url, title, author } = item;
-            return (
-              <li className="list-item" >
-                <span>
-                  <a href={url}>{title}</a> -
-                  {` ${author}`}
-                </span>
-                <button
-                  onClick={this.onDismiss}
-                  type="button"
-                  data-id={id}
-                >
-                  Dismiss
-                </button>
-              </li>
-            );
-          })}
+        <ul className="items-list">
+          {this.state.list
+            .filter(isSearched(this.state.searchTerm))
+            .map((item) => {
+              const { id, url, title, author } = item;
+              return (
+                <li className="list-item">
+                  <span>
+                    <a href={url}>{title}</a> -{` ${author}`}
+                  </span>
+                  <button onClick={this.onDismiss} type="button" data-id={id}>
+                    Dismiss
+                  </button>
+                </li>
+              );
+            })}
         </ul>
       </div>
     );

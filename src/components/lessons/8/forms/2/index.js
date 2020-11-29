@@ -5,7 +5,7 @@ class ControlledForm extends React.Component {
     super(props);
     this.state = {
       input: '',
-      submit: ''
+      submit: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -13,13 +13,12 @@ class ControlledForm extends React.Component {
 
   handleChange(event) {
     this.setState({
-      input: event.target.value
+      input: event.target.value,
     });
   }
 
   handleSubmit(event) {
     // change code below this line
-
     // change code above this line
   }
 
@@ -27,23 +26,23 @@ class ControlledForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          { /* change code below this line */ }
+          {/* change code below this line */}
 
-          { /* change code above this line */ }
-          <button type='submit'>Submit!</button>
+          {/* change code above this line */}
+          <button type="submit">Submit!</button>
         </form>
-        { /* change code below this line */ }
+        {/* change code below this line */}
 
-        { /* change code above this line */ }
+        {/* change code above this line */}
       </div>
     );
   }
-};
+}
 
 const Task = () => {
   return (
     <div>
-      <ControlledForm/>
+      <ControlledForm />
     </div>
   );
 };

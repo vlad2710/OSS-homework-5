@@ -1,10 +1,10 @@
 import React from 'react';
-//import debounce from 'lodash/debounce';
+// import debounce from 'lodash/debounce';
 
 class WindowSize extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {height: '', width: ''};
+    this.state = { height: '', width: '' };
     /* change code below this line */
 
     /* change code above this line */

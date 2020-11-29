@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import { Container, Footer } from './styled';
 
 const Index = ({ children }) => (
-  <Container role="main" >
-    <nav key="nav" >
-      <Link to="/" >Content</Link>
+  <Container role="main">
+    <nav key="nav">
+      <Link to="/">Content</Link>
     </nav>
     {children}
-    <Footer>React Courses, {(new Date()).getFullYear()}</Footer>
+    <Footer>React Courses, {new Date().getFullYear()}</Footer>
   </Container>
 );
 

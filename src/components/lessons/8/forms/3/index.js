@@ -47,8 +47,8 @@ class ControlledForm extends React.Component {
 const Task = () => {
   return (
     <div>
-      <UncontrolledForm/>
-      <ControlledForm/>
+      <UncontrolledForm />
+      <ControlledForm />
     </div>
   );
 };

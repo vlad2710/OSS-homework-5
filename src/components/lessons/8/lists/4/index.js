@@ -7,38 +7,36 @@ function Users({ users, online }) {
   return (
     <div>
       <h1>Current {status} Users:</h1>
-      <ul>
-        {usersItems}
-      </ul>
+      <ul>{usersItems}</ul>
     </div>
   );
-};
+}
 
 const users = [
   {
     username: 'Jeff',
-    online: true
+    online: true,
   },
   {
     username: 'Alan',
-    online: false
+    online: false,
   },
   {
     username: 'Mary',
-    online: true
+    online: true,
   },
   {
     username: 'Jim',
-    online: false
+    online: false,
   },
   {
     username: 'Sara',
-    online: true
+    online: true,
   },
   {
     username: 'Laura',
-    online: true
-  }
+    online: true,
+  },
 ];
 
 const Task = () => {

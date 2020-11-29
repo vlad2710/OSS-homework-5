@@ -37,7 +37,7 @@ const Search = ({ query, handleQuery, className, label }) => (
     <Button
       onClick={() => {
         // pass an object to satisfy event.target.value
-        handleQuery({ target: { value: "" } });
+        handleQuery({ target: { value: '' } });
       }}
     >
       Clear

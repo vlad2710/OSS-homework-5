@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Layout = ({ children }) => (<div>{children}</div>);
+const Layout = ({ children }) => <div>{children}</div>;
 
 function ResetPasswordForm() {
-  const onSubmit = e => e.preventDefault();
+  const onSubmit = (e) => e.preventDefault();
   return (
-    <form onSubmit={onSubmit} >
-      <label htmlFor="password" >Enter your password</label>
+    <form onSubmit={onSubmit}>
+      <label htmlFor="password">Enter your password</label>
       <input type="text" id="password" />
-      <button type="button" >Submit</button>
+      <button type="button">Submit</button>
     </form>
   );
 }
@@ -32,7 +32,7 @@ function ResetPassword({ hasPassword, name, ...formProps }) {
       )*/}
       <ResetPasswordForm {...formProps} />
     </Layout>
-  )
+  );
 }
 
 const Task = () => {

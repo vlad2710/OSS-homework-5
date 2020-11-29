@@ -13,18 +13,8 @@
     "email": "lourdes.alvarez@sequitur.com",
     "latitude": "37.158252",
     "longitude": "128.525958",
-    "tags": [
-      "ut",
-      "veniam",
-      "consequat",
-      333,
-      "fugiat"
-    ],
-    "range": [
-      0,
-      1,
-      2
-    ],
+    "tags": ["ut", "veniam", "consequat", 333, "fugiat"],
+    "range": [0, 1, 2],
     "friends": [
       {
         "id": 0,
@@ -58,15 +48,12 @@
       "dolor",
       "officia",
       "adipisicing",
-      {"id":  "article", "name":  "article"}
+      {
+        "id": "article",
+        "name": "article"
+      }
     ],
-    "range": [
-      0,
-      1,
-      2,
-      3,
-      4
-    ],
+    "range": [0, 1, 2, 3, 4],
     "friends": [
       {
         "id": 0,

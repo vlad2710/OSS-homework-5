@@ -11,34 +11,32 @@ import PropTypesTask4 from './propTypes/4';
 import FragmentsTask1 from './fragments/1';
 import FragmentsTask2 from './fragments/2';
 
-const basePath = './src/components/lessons/9/';
-
 const liftingStateUpTask1Description = getDescriptionComponent(
-  raw(basePath + 'liftingStateUp/1/README.md')
+  raw('./liftingStateUp/1/README.md')
 );
 const liftingStateUpTask2Description = getDescriptionComponent(
-  raw(basePath + 'liftingStateUp/2/README.md')
+  raw('./liftingStateUp/2/README.md')
 );
 const liftingStateUpTask3Description = getDescriptionComponent(
-  raw(basePath + 'liftingStateUp/3/README.md')
+  raw('./liftingStateUp/3/README.md')
 );
 const propTypes1Description = getDescriptionComponent(
-  raw(basePath + 'propTypes/1/README.md')
+  raw('./propTypes/1/README.md')
 );
 const propTypes2Description = getDescriptionComponent(
-  raw(basePath + 'propTypes/2/README.md')
+  raw('./propTypes/2/README.md')
 );
 const propTypes3Description = getDescriptionComponent(
-  raw(basePath + 'propTypes/3/README.md')
+  raw('./propTypes/3/README.md')
 );
 const propTypes4Description = getDescriptionComponent(
-  raw(basePath + 'propTypes/4/README.md')
+  raw('./propTypes/4/README.md')
 );
 const fragments1Description = getDescriptionComponent(
-  raw(basePath + 'fragments/1/README.md')
+  raw('./fragments/1/README.md')
 );
 const fragments2Description = getDescriptionComponent(
-  raw(basePath + 'fragments/2/README.md')
+  raw('./fragments/2/README.md')
 );
 
 //map tasks to topics names

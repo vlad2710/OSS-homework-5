@@ -16,24 +16,20 @@ import FormsTask3 from './forms/3';
 
 import CommonTask1 from './common/1';
 
-//in codesandbox.io raw.macro can't load source from relative path
-//raw('./lists/1/README.md')
-const basePath = './src/components/lessons/8/';
+const listsTask1Description = raw('./lists/1/README.md');
+const listsTask2Description = raw('./lists/2/README.md');
+const listsTask3Description = raw('./lists/3/README.md');
+const listsTask4Description = raw('./lists/4/README.md');
 
-const listsTask1Description = raw(basePath + 'lists/1/README.md');
-const listsTask2Description = raw(basePath + 'lists/2/README.md');
-const listsTask3Description = raw(basePath + 'lists/3/README.md');
-const listsTask4Description = raw(basePath + 'lists/4/README.md');
+const formsTask1Description = raw('./forms/1/README.md');
+const formsTask2Description = raw('./forms/2/README.md');
+const formsTask3Description = raw('./forms/3/README.md');
 
-const formsTask1Description = raw(basePath + 'forms/1/README.md');
-const formsTask2Description = raw(basePath + 'forms/2/README.md');
-const formsTask3Description = raw(basePath + 'forms/3/README.md');
+const eventsTask1Description = raw('./events/1/README.md');
+const eventsTask2Description = raw('./events/2/README.md');
+const eventsTask3Description = raw('./events/3/README.md');
 
-const eventsTask1Description = raw(basePath + 'events/1/README.md');
-const eventsTask2Description = raw(basePath + 'events/2/README.md');
-const eventsTask3Description = raw(basePath + 'events/3/README.md');
-
-const commonTask1Description = raw(basePath + 'common/1/README.md');
+const commonTask1Description = raw('./common/1/README.md');
 
 //map tasks to topics names
 export default {

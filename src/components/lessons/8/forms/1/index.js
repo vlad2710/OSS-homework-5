@@ -16,21 +16,36 @@ class UncontrolledForm extends Component {
     this.nameRef = React.createRef();
     this.mailRef = React.createRef();
     // change code below this line
-
+    this.messageRef = React.createRef();
     // change code above this line
   }
 
   handleSubmit = () => {
     // change code below this line
-    //sendEmail(name, mail, message);
+    let name = this.nameRef.current.value;
+    let mail = this.mailRef.current.value;
+    let message = this.messageRef.current.value;
+    sendEmail(name, mail, message);
     // change code above this line
   };
 
   render() {
     return (
-      <form>
+      <form style={{width: 'min-content'}}>
         {/* change code below this line */}
-
+        <div>
+          <label>Name:</label>
+          <input type="text" ref={this.nameRef} name="user_name"></input>
+        </div>
+        <div>
+          <label>E-mail:</label>
+          <input type="email" ref={this.mailRef} name="user_mail"></input>
+        </div>
+        <div>
+          <label>Message:</label>
+          <textarea ref={this.messageRef} name="user_message"></textarea>
+        </div>
+        <button type='submit' onClick={this.handleSubmit}>Submit!</button>
         {/* change code above this line */}
       </form>
     );

@@ -8,12 +8,12 @@ const friends = [
   { id: 117, name: 'Doug' },
 ];
 
-const List = () => {
-  // Render a list using the "friends" being passed in.
-  // prettier-ignore
+const List = ({friends}) => {
   return (
     <ul>
-
+      {friends.map( (item) =>{
+        return <li key={item.id}>{item.name}</li>
+      } )}
     </ul>
   );
 };

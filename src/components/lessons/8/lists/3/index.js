@@ -5,7 +5,7 @@ function ListItem({ data: { name, age } }) {
 }
 
 function FriendsList({ friends }) {
-  const listItems = friends.map((friend) => <ListItem data={friend} />);
+  const listItems = friends.map((friend, index) => <ListItem key={index} data={friend} />);
   return (
     <div>
       <h3>Correct Key Usage</h3>

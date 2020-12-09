@@ -2,12 +2,12 @@ import React from 'react';
 
 const friends = ['Mikenzi', 'Cash', 'Steven', 'Kimmy', 'Doug'];
 
-const List = () => {
-  // Render a list using the "friends" being passed in.
-  // prettier-ignore
+const List = ({friends}) => {
   return (
     <ul>
-
+      {friends.map( (item, index) =>{
+        return <li key={index}>{item}</li>
+      } )}
     </ul>
   );
 };

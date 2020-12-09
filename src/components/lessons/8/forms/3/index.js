@@ -38,16 +38,66 @@ class UncontrolledForm extends React.Component {
 }
 
 class ControlledForm extends React.Component {
-  // your code is here
+  
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       email: '',
+       isChecked: false
+    }
+
+    this.handleChangeInput = (event) =>{
+      this.setState({
+        email: event.target.value
+      })
+    }
+
+    this.agreeCheckbox = () =>{
+      this.setState( ({isChecked}) =>{
+        return{
+          isChecked: !isChecked
+        }
+      } )
+    }
+
+    this.handleSubmit = (event) =>{
+      event.preventDefault();
+
+      if(this.state.email && this.state.isChecked){
+        alert(`email: ${this.state.email}`);
+        this.setState({
+          email: '',
+          isChecked: false
+        })
+      }
+      if(!this.state.email){
+        alert(`enter valid email first, please`)
+      }
+      if(!this.state.isChecked){
+        alert(`agree, please`)
+      }
+    }
+
+
+  }
+  
+
   render() {
-    return null;
+    {console.log(this.state)}
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <input onChange={this.handleChangeInput} value={this.state.email} type="email" />
+        <input onChange={this.agreeCheckbox} checked={this.state.isChecked} type="checkbox" />
+      </form>
+    )
   }
 }
 
 const Task = () => {
   return (
     <div>
-      <UncontrolledForm />
+      {/* <UncontrolledForm /> */}
       <ControlledForm />
     </div>
   );

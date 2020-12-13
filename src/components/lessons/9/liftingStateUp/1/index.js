@@ -100,7 +100,7 @@ class VoteComponent extends React.PureComponent {
 VoteComponent.propTypes = {
   resolution: PropTypes.string,
   terminalNumber: PropTypes.number,
-  onVote: PropTypes.func
+  onVote: PropTypes.func.isRequired
 }
 
 const VotingDisplay = ({ resolution, result }) => {

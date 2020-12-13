@@ -1,11 +1,39 @@
 import React from 'react';
 import data from './data.json';
+import PropTypes from 'prop-types'
 
 const PersonalInfo = ({ data }) => (
   <div className="personalInfo">
     <pre>{JSON.stringify(data, null, 2)}</pre>
   </div>
 );
+
+PersonalInfo.propTypes = {
+  data: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    guid: PropTypes.string.isRequired,
+    isActive: PropTypes.bool.isRequired,
+    balance: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    age: PropTypes.number,
+    name: PropTypes.objectOf(PropTypes.string).isRequired,
+    company: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    latitude: PropTypes.string,
+    longitude: PropTypes.string,
+    tags: PropTypes.arrayOf(PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ])),
+    range: PropTypes.arrayOf(PropTypes.number),
+    friends: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string
+    }))
+  })
+}
 
 class ShowPersonalInfo extends React.Component {
   state = { selectedCompanyId: 'disabled' };

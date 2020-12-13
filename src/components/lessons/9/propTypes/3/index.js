@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 function Badge(props) {
   const { authed, style, name, handle, img, addFriend } = props;
@@ -15,6 +16,24 @@ function Badge(props) {
       <button onClick={addFriend}>Add Friend</button>
     </div>
   );
+}
+
+Badge.propTypes = {
+  authed: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+  handle: PropTypes.string.isRequired,
+  img: PropTypes.string,
+  addFriend: PropTypes.func,
+  style: PropTypes.shape({
+    width: PropTypes.number,
+    margin: PropTypes.string,
+    border: PropTypes.string,
+    padding: PropTypes.number,
+    borderRadius: PropTypes.number,
+    display: PropTypes.string,
+    flexDirection: PropTypes.string,
+    alignItems: PropTypes.string
+  })
 }
 
 const Task = () => {

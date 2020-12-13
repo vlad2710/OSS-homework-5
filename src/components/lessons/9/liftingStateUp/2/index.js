@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Chance from 'chance';
 import faker from 'faker';
 import styled from 'styled-components';
@@ -41,6 +41,8 @@ const list = refreshData(MIN_COUNT);
 function Task() {
   const { url } = useRouteMatch();
 
+  const[state, setState] = useState([]);
+
   const listPath = `${url}/list`;
 
   const match = useRouteMatch(listPath);
@@ -52,7 +54,7 @@ function Task() {
         <Switch>
           <Route path={listPath} exact>
             <Link to={url}>back to task page</Link>
-            <List list={list} />
+            <List list={list} state={state} setState={setState} />
           </Route>
         </Switch>
         <br />

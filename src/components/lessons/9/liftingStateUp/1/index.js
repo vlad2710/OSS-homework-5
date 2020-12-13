@@ -1,55 +1,5 @@
 import React from 'react';
-
-class VoteComponent extends React.PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      votesNumber: 0,
-    };
-  }
-
-  style = {
-    padding: '8px',
-    marginTop: '16px',
-    border: 'solid 1px grey',
-  };
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    if (this.state.votesNumber !== prevState.votesNumber) {
-      this.props.onVote(this.state.votesNumber);
-    }
-  }
-
-  increase = () => {
-    this.setState(({ votesNumber }) => ({ votesNumber: votesNumber + 1 }));
-  };
-
-  decrease = () => {
-    this.setState(({ votesNumber }) => ({ votesNumber: votesNumber - 1 }));
-  };
-
-  render() {
-    const { resolution, terminalNumber } = this.props;
-    return (
-      <div style={this.style}>
-        <h6>Terminal number: {terminalNumber}</h6>
-        <h3>Resolution: "{resolution}"</h3>
-        <button onClick={this.decrease}>No</button>
-        <button onClick={this.increase}>Yes</button>
-      </div>
-    );
-  }
-}
-
-const VotingDisplay = ({ resolution, result }) => {
-  return (
-    <React.Fragment>
-      <h1>Resolution: {resolution}</h1>
-      <h2>Result: {result}</h2>
-    </React.Fragment>
-  );
-};
+import PropTypes from 'prop-types'
 
 class VotingSystem extends React.Component {
   constructor(props) {
@@ -60,8 +10,20 @@ class VotingSystem extends React.Component {
     };
   }
 
-  onVote = (votesNumber) => {
-    this.setState({ votesNumber });
+  onVote = (btnName) => {
+    if(btnName == 'btnYes'){
+      this.setState( ({votesNumber}) =>{
+        return {
+          votesNumber: votesNumber + 1
+        }
+      } )
+    } else if(btnName == 'btnNo'){
+      this.setState( ({votesNumber}) =>{
+        return {
+          votesNumber: votesNumber - 1
+        }
+      } )
+    }
   };
 
   render() {
@@ -88,6 +50,71 @@ class VotingSystem extends React.Component {
       </React.Fragment>
     );
   }
+}
+
+
+class VoteComponent extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      votesNumber: 0,
+    };
+  }
+
+  style = {
+    padding: '8px',
+    marginTop: '16px',
+    border: 'solid 1px grey',
+  };
+
+  increase = (e) => {
+    this.setState( ({votesNumber}) =>{
+      return{
+        votesNumber: votesNumber + 1
+      }
+    }, this.props.onVote(e.target.name) )
+  };
+
+  decrease = (e) => {
+    this.setState( ({votesNumber}) =>{
+      return{
+        votesNumber: votesNumber - 1
+      }
+    }, this.props.onVote(e.target.name) )
+  };
+
+  render() {
+    const { resolution, terminalNumber } = this.props;
+    return (
+      <div style={this.style}>
+        <h6>Terminal number: {terminalNumber}</h6>
+        <h3>Resolution: "{resolution}"</h3>
+        <button onClick={this.decrease} name='btnNo'>No</button>
+        <button onClick={this.increase} name='btnYes'>Yes</button>
+      </div>
+    );
+  }
+}
+
+VoteComponent.propTypes = {
+  resolution: PropTypes.string,
+  terminalNumber: PropTypes.number,
+  onVote: PropTypes.func
+}
+
+const VotingDisplay = ({ resolution, result }) => {
+  return (
+    <React.Fragment>
+      <h1>Resolution: {resolution}</h1>
+      <h2>Result: {result}</h2>
+    </React.Fragment>
+  );
+};
+
+VotingDisplay.propTypes = {
+  resolution: PropTypes.string,
+  result: PropTypes.number
 }
 
 const resolution = 'Free beer to all programmers';

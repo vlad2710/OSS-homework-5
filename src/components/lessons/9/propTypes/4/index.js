@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import PropTypes from 'prop-types'
 import { ReactComponent as RubyIcon } from './icons/ruby.svg';
 import { ReactComponent as PythonIcon } from './icons/python.svg';
 import { ReactComponent as JavaIcon } from './icons/java.svg';
@@ -31,6 +32,17 @@ function LanguagePicker({ languages, selected, onUpdateLanguage }) {
       ))}
     </ul>
   );
+}
+
+LanguagePicker.propTypes = {
+  languages: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      icon: PropTypes.object
+    }),
+  ),
+  selected: PropTypes.string,
+  onUpdateLanguage: PropTypes.func
 }
 
 class Popular extends React.Component {
